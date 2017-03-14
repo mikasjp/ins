@@ -1,0 +1,9 @@
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\InertialNavigationSystem-Test.dll
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\InertialNavigationSystem-Test.pdb
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\InertialNavigationSystem.dll
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\nunit.framework.dll
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\InertialNavigationSystem.pdb
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\bin\Debug\nunit.framework.xml
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\obj\Debug\InertialNavigationSystem-Test.csprojResolveAssemblyReference.cache
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\obj\Debug\InertialNavigationSystem-Test.dll
+c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem-Test\obj\Debug\InertialNavigationSystem-Test.pdb

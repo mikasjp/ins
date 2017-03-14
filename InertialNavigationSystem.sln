@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertialNavigationSystem", "InertialNavigationSystem\InertialNavigationSystem.csproj", "{25A0B363-5484-45EA-8564-DB1B0F46BAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertialNavigationSystem-Test", "InertialNavigationSystem-Test\InertialNavigationSystem-Test.csproj", "{48893A65-605C-4EFB-9874-C8B344E63B59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25A0B363-5484-45EA-8564-DB1B0F46BAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A0B363-5484-45EA-8564-DB1B0F46BAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A0B363-5484-45EA-8564-DB1B0F46BAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A0B363-5484-45EA-8564-DB1B0F46BAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48893A65-605C-4EFB-9874-C8B344E63B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48893A65-605C-4EFB-9874-C8B344E63B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48893A65-605C-4EFB-9874-C8B344E63B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48893A65-605C-4EFB-9874-C8B344E63B59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
