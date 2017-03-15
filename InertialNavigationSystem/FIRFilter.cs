@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InertialNavigationSystem
 {
-    class FIRFilter:Filter
+    public class FIRFilter: IFilter
     {
 
         private List<Sample> Memory { get; set; }
@@ -17,7 +17,7 @@ namespace InertialNavigationSystem
         {
             double sum = 0;
             foreach(double Coefficient in FilterCoefficients)
-                sum += FilterCoefficients[i];
+                sum += Coefficient;
 
             if (sum != 1)
                 throw new Exception("Sum of coefficients must be 1.");
@@ -28,10 +28,20 @@ namespace InertialNavigationSystem
             
         }
 
-        public double AddSample(Sample sample)
+        public Sample AddSample(Sample sample)
         {
             //tutaj ładnie oblicza wszystko i zwraca przefiltrowaną próbkę
-            return 1;
+            if (Memory.Count == Memory.Capacity)
+                Memory.Remove(Memory.Last());
+
+            Memory.Insert(0, sample);
+
+            Sample resultSample = new Sample(sample.Time, 0);
+
+            for(int i=0; i<Memory.Count; i++)
+                resultSample.Value += Memory[i].Value * Coefficients[i];
+
+            return resultSample;
         }
 
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace InertialNavigationSystem_Test
 {
     [TestFixture]
-    public class IntegratorTest
+    public class Integrator_Test
     {
         [Test]
         public void IntegrateSamples()
