@@ -64,7 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlphaBetaFilter.cs" />
+    <Compile Include="FIRFilter.cs" />
     <Compile Include="Integrator.cs" />
+    <Compile Include="IFilter.cs" />
+    <Compile Include="MadgwickAHRS.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

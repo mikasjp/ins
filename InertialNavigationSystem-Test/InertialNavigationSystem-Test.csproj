@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntegratorTest.cs" />
+    <Compile Include="AlphaBetaFilter-Test.cs" />
+    <Compile Include="FIRFilter-Test.cs" />
+    <Compile Include="Integrator-Test.cs" />
+    <Compile Include="MadgwickAHRS-Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
