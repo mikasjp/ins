@@ -68,6 +68,7 @@
     <Compile Include="FIRFilter.cs" />
     <Compile Include="Integrator.cs" />
     <Compile Include="IFilter.cs" />
+    <Compile Include="MadgwickAHRS.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

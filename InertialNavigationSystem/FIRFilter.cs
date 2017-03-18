@@ -30,7 +30,6 @@ namespace InertialNavigationSystem
 
         public Sample AddSample(Sample sample)
         {
-            //tutaj ładnie oblicza wszystko i zwraca przefiltrowaną próbkę
             if (Memory.Count == Memory.Capacity)
                 Memory.Remove(Memory.Last());
 

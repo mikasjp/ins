@@ -33,6 +33,10 @@ namespace InertialNavigationSystem_Test
 
             Assert.AreEqual((1*0.25 + 2*0.25 + 4*0.25 + 8*0.25), filteredSample.Value);
 
+            filteredSample = Filter.AddSample(new Sample(5, 2));
+
+            Assert.AreEqual((2 * 0.25 + 4 * 0.25 + 8 * 0.25 + 2*0.25), filteredSample.Value);
+
         }
 
     }
