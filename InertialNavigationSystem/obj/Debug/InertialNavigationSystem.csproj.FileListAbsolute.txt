@@ -9,3 +9,4 @@ c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\In
 c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem\bin\Debug\nunit.framework.xml
 c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem\obj\Debug\InertialNavigationSystem.dll
 c:\users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem\obj\Debug\InertialNavigationSystem.pdb
+C:\Users\mikol\documents\visual studio 2015\Projects\InertialNavigationSystem\InertialNavigationSystem\obj\Debug\InertialNavigationSystem.csprojResolveAssemblyReference.cache

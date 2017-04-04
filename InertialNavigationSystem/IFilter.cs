@@ -10,6 +10,7 @@ namespace InertialNavigationSystem
     {
 
         Sample AddSample(Sample sample);
+        void Reset();
 
     }
 }

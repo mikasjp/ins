@@ -6,22 +6,34 @@ using System.Threading.Tasks;
 
 namespace InertialNavigationSystem
 {
-    public class AlphaBetaFilter
+    public class AlphaBetaFilter: IFilter
     {
 
         private double Alpha { get; set; }
         private double Beta { get; set; }
         private Sample LastSample { get; set; }
+        private double InitialTime = 0;
+        private double LastDerivative { get; set; } = 0;
 
-        double LastDerivative { get; set; } = 0;
-
-        public AlphaBetaFilter(double alpha, double beta, double InitialTime = 0)
+        /// <summary>
+        /// Initializes filter parameters.
+        /// </summary>
+        /// <param name="alpha">Alpha coefficient</param>
+        /// <param name="beta">Beta coefficient</param>
+        /// <param name="initialTime">Optional</param>
+        public AlphaBetaFilter(double alpha, double beta, double initialTime = 0)
         {
             Alpha = alpha;
             Beta = beta;
-            LastSample = new Sample(InitialTime, 0);
+            InitialTime = initialTime;
+            ResetFilter();
         }
 
+        /// <summary>
+        /// Returns filtered sample.
+        /// </summary>
+        /// <param name="sample">New sample</param>
+        /// <returns></returns>
         public Sample AddSample(Sample sample)
         {
 
@@ -45,5 +57,32 @@ namespace InertialNavigationSystem
             return estSample;
 
         }
+
+        /// <summary>
+        /// Sets Alpha coefficient.
+        /// </summary>
+        /// <param name="alpha">New Alpha coefficient.</param>
+        public void SetAlpha(double alpha)
+        {
+            Alpha = alpha;
+        }
+
+        /// <summary>
+        /// Sets Beta coefficient.
+        /// </summary>
+        /// <param name="beta">New Beta coefficient.</param>
+        public void SetBeta(double beta)
+        {
+            Beta = beta;
+        }
+
+        /// <summary>
+        /// Resets filter state.
+        /// </summary>
+        public void ResetFilter()
+        {
+            LastSample = new Sample(InitialTime, 0);
+        }
+
     }
 }

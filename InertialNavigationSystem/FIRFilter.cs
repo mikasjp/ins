@@ -13,6 +13,10 @@ namespace InertialNavigationSystem
 
         private List<double> Coefficients { get; set; }
 
+        /// <summary>
+        /// Initializes filter with list of given coefficients.
+        /// </summary>
+        /// <param name="FilterCoefficients">FIR filter coefficients. The sum of the coefficients must be equal to 1.</param>
         public FIRFilter(List<double> FilterCoefficients)
         {
             double sum = 0;
@@ -20,14 +24,19 @@ namespace InertialNavigationSystem
                 sum += Coefficient;
 
             if (sum != 1)
-                throw new Exception("Sum of coefficients must be 1.");
+                throw new Exception("The sum of the coefficients must be equal to 1.");
 
             Coefficients = FilterCoefficients;
 
-            Memory = new List<Sample>(Coefficients.Count);
+            Reset();
             
         }
 
+        /// <summary>
+        /// Returns filtered sample.
+        /// </summary>
+        /// <param name="sample">New sample</param>
+        /// <returns></returns>
         public Sample AddSample(Sample sample)
         {
             if (Memory.Count == Memory.Capacity)
@@ -41,6 +50,14 @@ namespace InertialNavigationSystem
                 resultSample.Value += Memory[i].Value * Coefficients[i];
 
             return resultSample;
+        }
+
+        /// <summary>
+        /// Resets filter memory.
+        /// </summary>
+        public void Reset()
+        {
+            Memory = new List<Sample>(Coefficients.Count);
         }
 
     }
