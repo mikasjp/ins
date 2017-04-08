@@ -26,7 +26,7 @@ namespace InertialNavigationSystem
             Alpha = alpha;
             Beta = beta;
             InitialTime = initialTime;
-            ResetFilter();
+            Reset();
         }
 
         /// <summary>
@@ -79,10 +79,9 @@ namespace InertialNavigationSystem
         /// <summary>
         /// Resets filter state.
         /// </summary>
-        public void ResetFilter()
+        public void Reset()
         {
             LastSample = new Sample(InitialTime, 0);
         }
-
     }
 }
