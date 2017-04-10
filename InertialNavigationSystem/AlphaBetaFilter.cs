@@ -9,11 +9,12 @@ namespace InertialNavigationSystem
     public class AlphaBetaFilter: IFilter
     {
 
-        private double Alpha { get; set; }
-        private double Beta { get; set; }
-        private Sample LastSample { get; set; }
-        private double InitialTime = 0;
-        private double LastDerivative { get; set; } = 0;
+        public double Alpha { get; protected set; }
+        public double Beta { get; protected set; }
+        protected Sample LastSample { get; set; }
+        protected double InitialTime = 0;
+        protected double LastDerivative { get; set; } = 0;
+        public double dt { get; private set; } = 0;
 
         /// <summary>
         /// Initializes filter parameters.
@@ -37,7 +38,7 @@ namespace InertialNavigationSystem
         public Sample AddSample(Sample sample)
         {
 
-            double dt = sample.Time - LastSample.Time;
+            dt = sample.Time - LastSample.Time;
 
             if (dt == 0)
                 return sample;

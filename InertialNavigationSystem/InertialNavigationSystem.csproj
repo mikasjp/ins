@@ -71,6 +71,7 @@
     <Compile Include="MadgwickAHRS.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartAlphaBetaFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

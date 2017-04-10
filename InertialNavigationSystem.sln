@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertialNavigationSystem", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertialNavigationSystem-Test", "InertialNavigationSystem-Test\InertialNavigationSystem-Test.csproj", "{48893A65-605C-4EFB-9874-C8B344E63B59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InertialNavigationSystem-Demo", "InertialNavigationSystem-Demo\InertialNavigationSystem-Demo.csproj", "{DE4671BF-D47D-40CF-9DC3-B191599E94F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{48893A65-605C-4EFB-9874-C8B344E63B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48893A65-605C-4EFB-9874-C8B344E63B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48893A65-605C-4EFB-9874-C8B344E63B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4671BF-D47D-40CF-9DC3-B191599E94F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4671BF-D47D-40CF-9DC3-B191599E94F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4671BF-D47D-40CF-9DC3-B191599E94F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4671BF-D47D-40CF-9DC3-B191599E94F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
