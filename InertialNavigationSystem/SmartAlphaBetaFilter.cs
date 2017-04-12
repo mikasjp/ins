@@ -35,7 +35,7 @@ namespace InertialNavigationSystem
         public SmartAlphaBetaFilter(double noiseVariance, uint memoryCapacity, double initialTime = 0)
         {
             Filter = new AlphaBetaFilter(1, 1);
-            NoiseVariance = noiseVariance;
+            SetNoiseVariance(noiseVariance);
             MemoryCapacity = memoryCapacity;
         }
 
@@ -56,6 +56,13 @@ namespace InertialNavigationSystem
             TuneFilter();
 
             return Filter.AddSample(sample);
+        }
+
+        public void SetNoiseVariance(double noiseVariance)
+        {
+            if (noiseVariance < 0)
+                throw new Exception("The variance must be not less than zero.");
+            NoiseVariance = noiseVariance;
         }
 
         public void Reset()
