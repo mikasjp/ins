@@ -36,18 +36,21 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Chart1 = new ZedGraph.ZedGraphControl();
-            this.Chart2 = new ZedGraph.ZedGraphControl();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.FilterSelector = new System.Windows.Forms.ToolStripComboBox();
+            this.fIRFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smartAlphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(732, 27);
@@ -88,29 +91,13 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Filter = "CSV Files|*.csv";
             this.openFileDialog.Title = "Select data file";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.Chart1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Chart2, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 27);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 426);
-            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // Chart1
             // 
             this.Chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Chart1.Location = new System.Drawing.Point(4, 4);
+            this.Chart1.Location = new System.Drawing.Point(0, 27);
             this.Chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Chart1.Name = "Chart1";
             this.Chart1.ScrollGrace = 0D;
@@ -120,38 +107,65 @@
             this.Chart1.ScrollMinX = 0D;
             this.Chart1.ScrollMinY = 0D;
             this.Chart1.ScrollMinY2 = 0D;
-            this.Chart1.Size = new System.Drawing.Size(358, 418);
-            this.Chart1.TabIndex = 0;
+            this.Chart1.Size = new System.Drawing.Size(732, 426);
+            this.Chart1.TabIndex = 1;
             // 
-            // Chart2
+            // toolStripButton2
             // 
-            this.Chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Chart2.Location = new System.Drawing.Point(370, 4);
-            this.Chart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Chart2.Name = "Chart2";
-            this.Chart2.ScrollGrace = 0D;
-            this.Chart2.ScrollMaxX = 0D;
-            this.Chart2.ScrollMaxY = 0D;
-            this.Chart2.ScrollMaxY2 = 0D;
-            this.Chart2.ScrollMinX = 0D;
-            this.Chart2.ScrollMinY = 0D;
-            this.Chart2.ScrollMinY2 = 0D;
-            this.Chart2.Size = new System.Drawing.Size(358, 418);
-            this.Chart2.TabIndex = 1;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FilterSelector,
+            this.fIRFilterToolStripMenuItem,
+            this.alphaBetaFilterToolStripMenuItem,
+            this.smartAlphaBetaFilterToolStripMenuItem});
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton2.Text = "Filtering";
+            // 
+            // FilterSelector
+            // 
+            this.FilterSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FilterSelector.Items.AddRange(new object[] {
+            "None",
+            "FIR Filter",
+            "Alpha Beta Filter",
+            "Smart Alpha Beta Filter"});
+            this.FilterSelector.MergeIndex = 1;
+            this.FilterSelector.Name = "FilterSelector";
+            this.FilterSelector.Size = new System.Drawing.Size(217, 28);
+            // 
+            // fIRFilterToolStripMenuItem
+            // 
+            this.fIRFilterToolStripMenuItem.Name = "fIRFilterToolStripMenuItem";
+            this.fIRFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.fIRFilterToolStripMenuItem.Text = "FIR Filter";
+            // 
+            // alphaBetaFilterToolStripMenuItem
+            // 
+            this.alphaBetaFilterToolStripMenuItem.Name = "alphaBetaFilterToolStripMenuItem";
+            this.alphaBetaFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.alphaBetaFilterToolStripMenuItem.Text = "Alpha Beta Filter";
+            // 
+            // smartAlphaBetaFilterToolStripMenuItem
+            // 
+            this.smartAlphaBetaFilterToolStripMenuItem.Name = "smartAlphaBetaFilterToolStripMenuItem";
+            this.smartAlphaBetaFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
+            this.smartAlphaBetaFilterToolStripMenuItem.Text = "Smart Alpha Beta Filter";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 453);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.Chart1);
             this.Controls.Add(this.toolStrip1);
             this.MinimumSize = new System.Drawing.Size(750, 500);
             this.Name = "Form1";
             this.Text = "Inertial Navigation System Demo";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,9 +179,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ZedGraph.ZedGraphControl Chart1;
-        private ZedGraph.ZedGraphControl Chart2;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
+        private System.Windows.Forms.ToolStripComboBox FilterSelector;
+        private System.Windows.Forms.ToolStripMenuItem fIRFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alphaBetaFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smartAlphaBetaFilterToolStripMenuItem;
     }
 }
 

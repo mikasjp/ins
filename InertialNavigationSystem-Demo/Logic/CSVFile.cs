@@ -17,28 +17,35 @@ namespace InertialNavigationSystem_Demo.Logic
             using (var fs = File.OpenRead(@file))
             using (var reader = new StreamReader(fs))
             {
-                while (!reader.EndOfStream)
+                try
                 {
-                    var line = reader.ReadLine();
-                    var values = line.Split(delimiter);
-                    List<double> record = new List<double>();
-                    foreach (string value in values)
+                    while (!reader.EndOfStream)
                     {
-                        double dataField = double.NaN;
-                        if (double.TryParse(value.Replace('.',','), out dataField))
+                        var line = reader.ReadLine();
+                        var values = line.Split(delimiter);
+                        List<double> record = new List<double>();
+                        foreach (string value in values)
                         {
-                            record.Add(dataField);
+                            double dataField = double.NaN;
+                            if (double.TryParse(value.Replace('.', ','), out dataField))
+                            {
+                                record.Add(dataField);
+                            }
+                            else
+                                break;
                         }
-                        else
-                            break;
-                    }
 
-                    if (record.Count > 0)
-                    {
-                        double time = record.First();
-                        record.RemoveAt(0);
-                        Data.Add(time, record);
+                        if (record.Count > 0)
+                        {
+                            double time = record.First();
+                            record.RemoveAt(0);
+                            Data.Add(time, record);
+                        }
                     }
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception("Can't read given file.");
                 }
             }
         }
