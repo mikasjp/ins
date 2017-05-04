@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InertialNavigationSystem
 {
-    interface IFilter
+    public interface IFilter
     {
 
         Sample AddSample(Sample sample);

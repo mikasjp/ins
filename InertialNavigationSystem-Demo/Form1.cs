@@ -55,11 +55,31 @@ namespace InertialNavigationSystem_Demo
 
         private void GenerateChart()
         {
+            if (csv == null)
+                return;
 
             list1.Clear();
             list2.Clear();
 
-            SmartAlphaBetaFilter SABFilter = new SmartAlphaBetaFilter(0.003307643036326, 500);
+            IFilter Filter;
+
+            string FilterType = FilterSelector.Text;
+
+            switch (FilterType)
+            {
+                case "FIR Filter":
+                    Filter = new FIRFilter(new List<double>() { 0.25, 0.25, 0.25, 0.25 });
+                    break;
+                case "Alpha Beta Filter":
+                    Filter = new AlphaBetaFilter(0.2, 0.3);
+                    break;
+                case "Smart Alpha Beta Filter":
+                    Filter = new SmartAlphaBetaFilter(0.003307643036326, 500);
+                    break;
+                default:
+                    Filter = null;
+                    break;
+            }
 
             Integrator integrator = new Integrator();
 
@@ -68,7 +88,13 @@ namespace InertialNavigationSystem_Demo
                 InertialNavigationSystem.Sample sample = new InertialNavigationSystem.Sample(entry.Key, entry.Value[0]);
                 list1.Add(sample.Time, sample.Value);
 
-                InertialNavigationSystem.Sample fsample = SABFilter.AddSample(sample);
+                InertialNavigationSystem.Sample fsample = sample;
+
+                if (Filter != null)
+                {
+                    fsample = Filter.AddSample(sample);
+                }
+
                 integrator.AddSample(fsample);
                 list2.Add(sample.Time, integrator.Value);
             }
@@ -108,7 +134,7 @@ namespace InertialNavigationSystem_Demo
 
         private void FilterSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            GenerateChart();
         }
     }
 }
