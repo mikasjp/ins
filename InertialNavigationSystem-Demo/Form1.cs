@@ -86,6 +86,10 @@ namespace InertialNavigationSystem_Demo
 
             Integrator integrator = new Integrator();
 
+            int PreviousProgress = 0;
+            int Progress = 0;
+            int i = 0;
+
             foreach (KeyValuePair<double, List<double>> entry in csv.Data)
             {
                 InertialNavigationSystem.Sample sample = new InertialNavigationSystem.Sample(entry.Key, entry.Value[0]);
@@ -100,6 +104,19 @@ namespace InertialNavigationSystem_Demo
 
                 integrator.AddSample(fsample);
                 list2.Add(sample.Time, integrator.Value);
+
+                i++;
+
+                Progress = i * 100 / csv.Data.Count;
+
+                if(PreviousProgress!=Progress)
+                {
+                    ProgressIndicator.Value = Progress;
+                    Application.DoEvents();
+                }
+
+                PreviousProgress = Progress;
+
             }
 
             Chart1.AxisChange();

@@ -44,6 +44,7 @@
             this.Chart1 = new ZedGraph.ZedGraphControl();
             this.WaitingScreen = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.ProgressIndicator = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStrip1.SuspendLayout();
             this.WaitingScreen.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,8 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.ProgressIndicator});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(732, 27);
@@ -182,6 +184,11 @@
             this.label1.Text = "Please wait...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ProgressIndicator
+            // 
+            this.ProgressIndicator.Name = "ProgressIndicator";
+            this.ProgressIndicator.Size = new System.Drawing.Size(100, 24);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +224,7 @@
         private System.Windows.Forms.ToolStripMenuItem smartAlphaBetaFilterToolStripMenuItem;
         private System.Windows.Forms.Panel WaitingScreen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripProgressBar ProgressIndicator;
     }
 }
 
