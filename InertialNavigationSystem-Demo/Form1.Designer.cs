@@ -35,13 +35,13 @@
             this.importDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.Chart1 = new ZedGraph.ZedGraphControl();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.FilterSelector = new System.Windows.Forms.ToolStripComboBox();
             this.fIRFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAlphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.Chart1 = new ZedGraph.ZedGraphControl();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,42 +73,21 @@
             // importDataToolStripMenuItem
             // 
             this.importDataToolStripMenuItem.Name = "importDataToolStripMenuItem";
-            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.importDataToolStripMenuItem.Text = "Import data";
             this.importDataToolStripMenuItem.Click += new System.EventHandler(this.importDataToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.Filter = "CSV Files|*.csv";
-            this.openFileDialog.Title = "Select data file";
-            // 
-            // Chart1
-            // 
-            this.Chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Chart1.Location = new System.Drawing.Point(0, 27);
-            this.Chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Chart1.Name = "Chart1";
-            this.Chart1.ScrollGrace = 0D;
-            this.Chart1.ScrollMaxX = 0D;
-            this.Chart1.ScrollMaxY = 0D;
-            this.Chart1.ScrollMaxY2 = 0D;
-            this.Chart1.ScrollMinX = 0D;
-            this.Chart1.ScrollMinY = 0D;
-            this.Chart1.ScrollMinY2 = 0D;
-            this.Chart1.Size = new System.Drawing.Size(732, 426);
-            this.Chart1.TabIndex = 1;
             // 
             // toolStripButton2
             // 
@@ -135,6 +114,7 @@
             this.FilterSelector.MergeIndex = 1;
             this.FilterSelector.Name = "FilterSelector";
             this.FilterSelector.Size = new System.Drawing.Size(217, 28);
+            this.FilterSelector.SelectedIndexChanged += new System.EventHandler(this.FilterSelector_SelectedIndexChanged);
             // 
             // fIRFilterToolStripMenuItem
             // 
@@ -153,6 +133,27 @@
             this.smartAlphaBetaFilterToolStripMenuItem.Name = "smartAlphaBetaFilterToolStripMenuItem";
             this.smartAlphaBetaFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
             this.smartAlphaBetaFilterToolStripMenuItem.Text = "Smart Alpha Beta Filter";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "CSV Files|*.csv";
+            this.openFileDialog.Title = "Select data file";
+            // 
+            // Chart1
+            // 
+            this.Chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Chart1.Location = new System.Drawing.Point(0, 27);
+            this.Chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Chart1.Name = "Chart1";
+            this.Chart1.ScrollGrace = 0D;
+            this.Chart1.ScrollMaxX = 0D;
+            this.Chart1.ScrollMaxY = 0D;
+            this.Chart1.ScrollMaxY2 = 0D;
+            this.Chart1.ScrollMinX = 0D;
+            this.Chart1.ScrollMinY = 0D;
+            this.Chart1.ScrollMinY2 = 0D;
+            this.Chart1.Size = new System.Drawing.Size(732, 426);
+            this.Chart1.TabIndex = 1;
             // 
             // Form1
             // 
