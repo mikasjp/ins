@@ -136,5 +136,20 @@ namespace InertialNavigationSystem_Demo
         {
             GenerateChart();
         }
+
+        private void fIRFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void alphaBetaFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void smartAlphaBetaFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

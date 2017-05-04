@@ -121,18 +121,21 @@
             this.fIRFilterToolStripMenuItem.Name = "fIRFilterToolStripMenuItem";
             this.fIRFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
             this.fIRFilterToolStripMenuItem.Text = "FIR Filter";
+            this.fIRFilterToolStripMenuItem.Click += new System.EventHandler(this.fIRFilterToolStripMenuItem_Click);
             // 
             // alphaBetaFilterToolStripMenuItem
             // 
             this.alphaBetaFilterToolStripMenuItem.Name = "alphaBetaFilterToolStripMenuItem";
             this.alphaBetaFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
             this.alphaBetaFilterToolStripMenuItem.Text = "Alpha Beta Filter";
+            this.alphaBetaFilterToolStripMenuItem.Click += new System.EventHandler(this.alphaBetaFilterToolStripMenuItem_Click);
             // 
             // smartAlphaBetaFilterToolStripMenuItem
             // 
             this.smartAlphaBetaFilterToolStripMenuItem.Name = "smartAlphaBetaFilterToolStripMenuItem";
             this.smartAlphaBetaFilterToolStripMenuItem.Size = new System.Drawing.Size(283, 26);
             this.smartAlphaBetaFilterToolStripMenuItem.Text = "Smart Alpha Beta Filter";
+            this.smartAlphaBetaFilterToolStripMenuItem.Click += new System.EventHandler(this.smartAlphaBetaFilterToolStripMenuItem_Click);
             // 
             // openFileDialog
             // 
