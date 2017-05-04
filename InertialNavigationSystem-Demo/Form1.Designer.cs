@@ -42,7 +42,10 @@
             this.smartAlphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.Chart1 = new ZedGraph.ZedGraphControl();
+            this.WaitingScreen = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
+            this.WaitingScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -73,19 +76,19 @@
             // importDataToolStripMenuItem
             // 
             this.importDataToolStripMenuItem.Name = "importDataToolStripMenuItem";
-            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.importDataToolStripMenuItem.Text = "Import data";
             this.importDataToolStripMenuItem.Click += new System.EventHandler(this.importDataToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -158,11 +161,33 @@
             this.Chart1.Size = new System.Drawing.Size(732, 426);
             this.Chart1.TabIndex = 1;
             // 
+            // WaitingScreen
+            // 
+            this.WaitingScreen.Controls.Add(this.label1);
+            this.WaitingScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WaitingScreen.Location = new System.Drawing.Point(0, 27);
+            this.WaitingScreen.Name = "WaitingScreen";
+            this.WaitingScreen.Size = new System.Drawing.Size(732, 426);
+            this.WaitingScreen.TabIndex = 2;
+            this.WaitingScreen.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(732, 426);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Please wait...";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 453);
+            this.Controls.Add(this.WaitingScreen);
             this.Controls.Add(this.Chart1);
             this.Controls.Add(this.toolStrip1);
             this.MinimumSize = new System.Drawing.Size(750, 500);
@@ -170,6 +195,7 @@
             this.Text = "Inertial Navigation System Demo";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.WaitingScreen.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +215,8 @@
         private System.Windows.Forms.ToolStripMenuItem fIRFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alphaBetaFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem smartAlphaBetaFilterToolStripMenuItem;
+        private System.Windows.Forms.Panel WaitingScreen;
+        private System.Windows.Forms.Label label1;
     }
 }
 

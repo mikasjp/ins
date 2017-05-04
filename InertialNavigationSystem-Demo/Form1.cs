@@ -58,6 +58,9 @@ namespace InertialNavigationSystem_Demo
             if (csv == null)
                 return;
 
+            WaitingScreen.Visible = true;
+            this.Refresh();
+
             list1.Clear();
             list2.Clear();
 
@@ -101,6 +104,9 @@ namespace InertialNavigationSystem_Demo
 
             Chart1.AxisChange();
             Chart1.Refresh();
+
+            WaitingScreen.Visible = false;
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
