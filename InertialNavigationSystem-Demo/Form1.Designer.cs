@@ -50,6 +50,8 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.DrawIntegral = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.WaitingScreen.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,7 @@
             this.ProgressIndicator});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(732, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(782, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -77,6 +79,8 @@
             this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importDataToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.DrawIntegral,
+            this.toolStripSeparator4,
             this.exitToolStripMenuItem});
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -175,7 +179,7 @@
             this.Chart1.ScrollMinX = 0D;
             this.Chart1.ScrollMinY = 0D;
             this.Chart1.ScrollMinY2 = 0D;
-            this.Chart1.Size = new System.Drawing.Size(732, 425);
+            this.Chart1.Size = new System.Drawing.Size(782, 525);
             this.Chart1.TabIndex = 1;
             // 
             // WaitingScreen
@@ -184,7 +188,7 @@
             this.WaitingScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WaitingScreen.Location = new System.Drawing.Point(0, 28);
             this.WaitingScreen.Name = "WaitingScreen";
-            this.WaitingScreen.Size = new System.Drawing.Size(732, 425);
+            this.WaitingScreen.Size = new System.Drawing.Size(782, 525);
             this.WaitingScreen.TabIndex = 2;
             this.WaitingScreen.Visible = false;
             // 
@@ -194,7 +198,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(732, 425);
+            this.label1.Size = new System.Drawing.Size(782, 525);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please wait...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,16 +231,30 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(280, 6);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(178, 6);
+            // 
+            // DrawIntegral
+            // 
+            this.DrawIntegral.CheckOnClick = true;
+            this.DrawIntegral.Name = "DrawIntegral";
+            this.DrawIntegral.Size = new System.Drawing.Size(181, 26);
+            this.DrawIntegral.Text = "Draw integral";
+            this.DrawIntegral.CheckedChanged += new System.EventHandler(this.toolStripMenuItem2_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 453);
+            this.ClientSize = new System.Drawing.Size(782, 553);
             this.Controls.Add(this.WaitingScreen);
             this.Controls.Add(this.Chart1);
             this.Controls.Add(this.toolStrip1);
             this.MinimumSize = new System.Drawing.Size(750, 500);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inertial Navigation System Demo";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -268,6 +286,8 @@
         private System.Windows.Forms.ToolStripComboBox ColumnSelector;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem DrawIntegral;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

@@ -103,7 +103,8 @@ namespace InertialNavigationSystem_Demo
                 list1.Add(sample.Time, sample.Value);
 
                 integrator.AddSample(sample);
-                list2.Add(sample.Time, integrator.Value);
+                if(DrawIntegral.Checked)
+                    list2.Add(sample.Time, integrator.Value);
 
                 i++;
 
@@ -182,6 +183,11 @@ namespace InertialNavigationSystem_Demo
         }
 
         private void ColumnSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenerateChart();
+        }
+
+        private void toolStripMenuItem2_CheckedChanged(object sender, EventArgs e)
         {
             GenerateChart();
         }
