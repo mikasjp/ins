@@ -77,32 +77,32 @@ namespace InertialNavigationSystem_Demo
                     Filter = new AlphaBetaFilter(0.2, 0.3);
                     break;
                 case "Smart Alpha Beta Filter":
-                    Filter = new SmartAlphaBetaFilter(0.003307643036326, 500);
+                    Filter = new SmartAlphaBetaFilter(0.003307643036326, 200);
                     break;
                 default:
                     Filter = null;
                     break;
             }
 
-            Integrator integrator = new Integrator();
-
             int PreviousProgress = 0;
             int Progress = 0;
             int i = 0;
 
+
+            Integrator integrator = new Integrator();
+            
             foreach (KeyValuePair<double, List<double>> entry in csv.Data)
             {
-                InertialNavigationSystem.Sample sample = new InertialNavigationSystem.Sample(entry.Key, entry.Value[0]);
-                list1.Add(sample.Time, sample.Value);
-
-                InertialNavigationSystem.Sample fsample = sample;
+                InertialNavigationSystem.Sample sample = new InertialNavigationSystem.Sample(entry.Key, entry.Value[ColumnSelector.SelectedIndex]);
 
                 if (Filter != null)
                 {
-                    fsample = Filter.AddSample(sample);
+                    sample = Filter.AddSample(sample);
                 }
+                
+                list1.Add(sample.Time, sample.Value);
 
-                integrator.AddSample(fsample);
+                integrator.AddSample(sample);
                 list2.Add(sample.Time, integrator.Value);
 
                 i++;
@@ -141,7 +141,13 @@ namespace InertialNavigationSystem_Demo
                     csv = new CSVFile(openFileDialog.FileName, ';');
                     try
                     {
-                        GenerateChart();
+                        ColumnSelector.Items.Clear();
+                        for(int i=0; i<csv.Data.First().Value.Count; i++)
+                        {
+                            ColumnSelector.Items.Add((i+1).ToString());
+                        }
+                        ColumnSelector.SelectedIndex = 0;
+                        //GenerateChart();
                     }
                     catch(Exception ex)
                     {
@@ -173,6 +179,11 @@ namespace InertialNavigationSystem_Demo
         private void smartAlphaBetaFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void ColumnSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenerateChart();
         }
     }
 }

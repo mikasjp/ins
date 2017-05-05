@@ -40,11 +40,17 @@
             this.fIRFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAlphaBetaFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProgressIndicator = new System.Windows.Forms.ToolStripProgressBar();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.Chart1 = new ZedGraph.ZedGraphControl();
             this.WaitingScreen = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.ProgressIndicator = new System.Windows.Forms.ToolStripProgressBar();
+            this.ColumnSelector = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.WaitingScreen.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +61,14 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.ColumnSelector,
+            this.toolStripSeparator2,
             this.ProgressIndicator});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(732, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(732, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -72,7 +82,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 25);
             this.toolStripButton1.Text = "File";
             // 
             // importDataToolStripMenuItem
@@ -98,14 +108,16 @@
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
             this.FilterSelector,
+            this.toolStripSeparator3,
             this.fIRFilterToolStripMenuItem,
             this.alphaBetaFilterToolStripMenuItem,
             this.smartAlphaBetaFilterToolStripMenuItem});
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(77, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(77, 25);
             this.toolStripButton2.Text = "Filtering";
             // 
             // FilterSelector
@@ -142,6 +154,11 @@
             this.smartAlphaBetaFilterToolStripMenuItem.Text = "Smart Alpha Beta Filter";
             this.smartAlphaBetaFilterToolStripMenuItem.Click += new System.EventHandler(this.smartAlphaBetaFilterToolStripMenuItem_Click);
             // 
+            // ProgressIndicator
+            // 
+            this.ProgressIndicator.Name = "ProgressIndicator";
+            this.ProgressIndicator.Size = new System.Drawing.Size(100, 25);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Filter = "CSV Files|*.csv";
@@ -150,7 +167,7 @@
             // Chart1
             // 
             this.Chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Chart1.Location = new System.Drawing.Point(0, 27);
+            this.Chart1.Location = new System.Drawing.Point(0, 28);
             this.Chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Chart1.Name = "Chart1";
             this.Chart1.ScrollGrace = 0D;
@@ -160,16 +177,16 @@
             this.Chart1.ScrollMinX = 0D;
             this.Chart1.ScrollMinY = 0D;
             this.Chart1.ScrollMinY2 = 0D;
-            this.Chart1.Size = new System.Drawing.Size(732, 426);
+            this.Chart1.Size = new System.Drawing.Size(732, 425);
             this.Chart1.TabIndex = 1;
             // 
             // WaitingScreen
             // 
             this.WaitingScreen.Controls.Add(this.label1);
             this.WaitingScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WaitingScreen.Location = new System.Drawing.Point(0, 27);
+            this.WaitingScreen.Location = new System.Drawing.Point(0, 28);
             this.WaitingScreen.Name = "WaitingScreen";
-            this.WaitingScreen.Size = new System.Drawing.Size(732, 426);
+            this.WaitingScreen.Size = new System.Drawing.Size(732, 425);
             this.WaitingScreen.TabIndex = 2;
             this.WaitingScreen.Visible = false;
             // 
@@ -179,15 +196,44 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(732, 426);
+            this.label1.Size = new System.Drawing.Size(732, 425);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please wait...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ProgressIndicator
+            // ColumnSelector
             // 
-            this.ProgressIndicator.Name = "ProgressIndicator";
-            this.ProgressIndicator.Size = new System.Drawing.Size(100, 24);
+            this.ColumnSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ColumnSelector.Name = "ColumnSelector";
+            this.ColumnSelector.Size = new System.Drawing.Size(121, 28);
+            this.ColumnSelector.SelectedIndexChanged += new System.EventHandler(this.ColumnSelector_SelectedIndexChanged);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(93, 25);
+            this.toolStripLabel1.Text = "CSV Column:";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox1.Text = "Filter selector:";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(280, 6);
             // 
             // Form1
             // 
@@ -225,6 +271,12 @@
         private System.Windows.Forms.Panel WaitingScreen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripProgressBar ProgressIndicator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox ColumnSelector;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 
