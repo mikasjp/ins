@@ -65,13 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlphaBetaFilter.cs" />
+    <Compile Include="EarthProjector.cs" />
     <Compile Include="FIRFilter.cs" />
     <Compile Include="Integrator.cs" />
     <Compile Include="IFilter.cs" />
     <Compile Include="MadgwickAHRS.cs" />
+    <Compile Include="Matrix3by3.cs" />
+    <Compile Include="Quaternion.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartAlphaBetaFilter.cs" />
+    <Compile Include="Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

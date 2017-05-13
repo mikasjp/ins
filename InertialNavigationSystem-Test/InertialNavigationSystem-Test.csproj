@@ -50,6 +50,7 @@
     <Compile Include="MadgwickAHRS-Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartAlphaBetaFilter-Test.cs" />
+    <Compile Include="Vector-Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
